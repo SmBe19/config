@@ -2,7 +2,7 @@
 
 DMENU="dmenu -i"
 TERMI="xterm -e"
-CACHE="$HOME/.i3/.dmenu_cache_recent"
+CACHE="$HOME/.config/i3/.dmenu_cache_recent"
 
 touch $CACHE
 MOST_USED=`sort $CACHE | uniq -c | sort -nr | colrm 1 8`
