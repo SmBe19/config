@@ -165,13 +165,13 @@ bindsym $mod+Ctrl+8 workspace c8
 bindsym $mod+Ctrl+9 workspace c9
 bindsym $mod+Ctrl+0 workspace c10
 
-bindcode $mod+$key_y exec ~/.i3/get_workspace_options.py | dmenu -b | ~/.i3/go_to_workspace.py
-bindcode $mod+Ctrl+$key_y exec dmenu -b | ~/.i3/go_to_workspace.py
-bindcode $mod+Shift+$key_y exec ~/.i3/get_workspace_options.py | dmenu -b | ~/.i3/move_to_workspace.py
-bindcode $mod+Ctrl+Shift+$key_y exec dmenu -b | ~/.i3/move_to_workspace.py
+bindcode $mod+$key_y exec ~/.config/i3/get_workspace_options.py | dmenu -b | ~/.config/i3/go_to_workspace.py
+bindcode $mod+Ctrl+$key_y exec dmenu -b | ~/.config/i3/go_to_workspace.py
+bindcode $mod+Shift+$key_y exec ~/.config/i3/get_workspace_options.py | dmenu -b | ~/.config/i3/move_to_workspace.py
+bindcode $mod+Ctrl+Shift+$key_y exec dmenu -b | ~/.config/i3/move_to_workspace.py
 
 #goto new workspace
-bindcode $mod+Shift+$key_v exec "date|md5sum|cut -c-5|~/.i3/go_to_workspace.py"
+bindcode $mod+Shift+$key_v exec "date|md5sum|cut -c-5|~/.config/i3/go_to_workspace.py"
 
 bindcode $mod+$key_quote workspace prev
 bindcode $mod+$key_roof workspace next
