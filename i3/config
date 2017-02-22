@@ -215,6 +215,7 @@ bindcode $mod+Shift+$key_m restart
 bindcode $mod+$key_m exec synclient TouchpadOff=$((1-`synclient|grep TouchpadOff|sed  -e 's/[^0-9]*//'`))
 # exit i3 (logs you out of your X session)
 bindcode $mod+$key_comma exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindcode $mod+Ctrl+$key_comma exec "i3-nagbar -t warning -m 'Shutdown?' -b 'Yes' 'shutdown now'"
 bindcode $mod+Ctrl+Shift+$key_comma exec "setxkbmap ch; i3-msg workspace @lock; i3lock -c FF9900 -d;sudo pm-hibernate"
 bindcode $mod+Shift+$key_comma exec "setxkbmap ch; i3-msg workspace @lock; i3lock -c FF9900 -d;sudo pm-suspend"
 
