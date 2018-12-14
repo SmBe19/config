@@ -1,5 +1,9 @@
 [user]
 	name = Benjamin Schmid
 	email = git@schmidb.ch
+[push]
+	default = matching
+[core]
+	autocrlf = input
 [pull]
 	rebase = true
