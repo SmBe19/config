@@ -212,11 +212,15 @@ bindcode $mod+Shift+$key_roof move workspace to output up
 bindcode $mod+Shift+$key_n reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindcode $mod+Shift+$key_m restart
+bindcode $mod+$key_m exec synclient TouchpadOff=$((1-`synclient|grep TouchpadOff|sed  -e 's/[^0-9]*//'`))
 # exit i3 (logs you out of your X session)
 bindcode $mod+$key_comma exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindcode $mod+Ctrl+$key_comma exec "i3-nagbar -t warning -m 'Shutdown?' -b 'Yes' 'shutdown now'"
+bindcode $mod+Ctrl+Shift+$key_comma exec "setxkbmap ch; i3-msg workspace @lock; i3lock -c FF9900 -d;sudo pm-hibernate"
+bindcode $mod+Shift+$key_comma exec "setxkbmap ch; gnome-session-quit"
 
 bindcode $mod+Shift+$key_dot exec "setxkbmap ch; i3-msg workspace @lock; i3lock -c FF9900 -d"
+bindcode $mod+$key_dot exec "setxkbmap ch; i3-msg workspace @lock; i3lock -i ~/Downloads/win7login1.png -d -u -p win"
 
 bindcode $mod+Ctrl+$key_m exec "i3-msg workspace @matrix; xterm -e cmatrix;"
 
@@ -275,6 +279,7 @@ bindcode $mod+Shift+Control+$key_u exec setxkbmap us
 bindcode $mod+Shift+Control+$key_d exec setxkbmap dvorak
 bindcode $mod+Shift+Control+$key_n exec setxkbmap de neo
 
+bindcode $mod+$key_q exec qutebrowser
 bindcode $mod+$key_w exec thunderbird
 bindcode $mod+$key_e exec emacs
 bindcode $mod+$key_r exec chromium
@@ -289,6 +294,14 @@ bindcode $mod+$key_z exec nautilus --no-desktop
 # for_window [title="Dateioperationen"] floating enable
 for_window [title="Auto-Complete"] floating enable
 for_window [title="ec"] foating enable
+
+# Audio
+bindcode $key_mute exec "pulseaudio-ctl mute"
+bindcode $key_voldown exec "pulseaudio-ctl down"
+bindcode $key_volup exec "pulseaudio-ctl up"
+
+##Auto assign new windows to workspaces
+assign [class="(?i)mumble"] mumble
 
 workspace 1 output DVI-D-1
 workspace 2 output DVI-D-1

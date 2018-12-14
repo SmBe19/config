@@ -1,0 +1,5 @@
+[user]
+	name = Benjamin Schmid
+	email = git@schmidb.ch
+[pull]
+	rebase = true
