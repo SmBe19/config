@@ -3,7 +3,10 @@
 	email = git@schmidb.ch
 [push]
 	default = matching
+	autoSetupRemote = true
 [core]
 	autocrlf = input
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
